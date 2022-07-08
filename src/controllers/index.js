@@ -1,17 +1,18 @@
-const vehicle = require('../models/vehicleModel')
+const mongoose = require('mongoose');
+const Vehicle = mongoose.model("Vehicle")
 
 const createVehicles = (request, response) => {
     //adicionar veiculo
-    vehicle.create(request.body).then(function (v) {
+    Vehicle.create(request.body).then(function (v) {
         response.send(v);
     })
 }
 
 const updateVehicles = (request, response) => {
     //editar veiculo
-    vehicle.findByIdAndUpdate({ _id: request.params.id },
+    Vehicle.findByIdAndUpdate({ _id: request.params.id },
         request.body).then(function () {
-            vehicle.findOne({ _id: request.params.id }).then(function (v) {
+            Vehicle.findOne({ _id: request.params.id }).then(function (v) {
                 response.send(v);
             });
         })
@@ -19,14 +20,14 @@ const updateVehicles = (request, response) => {
 
 const deleteVehicles = (request, response) => {
     //deletar veiculo
-    vehicle.findByIdAndRemove({ _id: request.params.id }).then(function (v) {
+    Vehicle.findByIdAndRemove({ _id: request.params.id }).then(function (v) {
         response.send(v);
     })
 }
 
 const getVehicles = (request, response) => {
     //retornar todos os veiculos
-    vehicle.find({}).then(function (v) {
+    Vehicle.find({}).then(function (v) {
         response.send(v);
     });
 }

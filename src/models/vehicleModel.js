@@ -12,7 +12,8 @@ const vehicleSchema =  new Schema({
       "type": "String"
     },
     "isFavorite": {
-      "type": "String"
+      "type": Boolean,
+      "default": false
     },
     "year": {
       "type": "String"
@@ -24,13 +25,13 @@ const vehicleSchema =  new Schema({
       "type": "String"
     },
     "createdAt": {
-      "type": "String"
+      "type": Date,
+      "default": Date.now
     },
     "brand": {
       "type": "String"
     }
   });
 
-  const vehicle = mongoose.model("vehicles", vehicleSchema);
 
-  module.exports = vehicle
+  module.exports = mongoose.model("Vehicle", vehicleSchema);
