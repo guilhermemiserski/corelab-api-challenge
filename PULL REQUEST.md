@@ -8,4 +8,4 @@ Já no frontend mantive a estrutura de pastas padrão, mas acabei utilizado o re
 
 Conclusão
 
-Pra finalizar gostaria de dizer que gostei muito do desafio e me fez evoluir muito como programador, estou iniciando ainda a carreira e gostaria muito que essa fosse minha primeira oportunidade!
+Pra finalizar gostaria de dizer que gostei muito do desafio e que ele me fez aprender muito como programador, sei que tenho muitas coisas para conhecer e evoluir, espero que seja contratado como trainee e que eu consiga entregar muitas coisas cada dia mais.
