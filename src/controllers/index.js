@@ -32,4 +32,23 @@ const getVehicles = (request, response) => {
     });
 }
 
-module.exports = {createVehicles, updateVehicles, deleteVehicles, getVehicles}
+const filterVehciles = (request, response) => {
+    //filtrar veiculos
+    Vehicle.find({
+        $or: [
+            {
+                brand: request.params.brand
+            },
+            {
+                year: request.params.year
+            },
+            {
+                price: { '$gt': request.params.minPrice, '$lt': request.params.maxPrice}
+            }
+        ]
+    }).then(function (v){
+        response.send(v);
+    })
+}
+
+module.exports = {createVehicles, updateVehicles, deleteVehicles, getVehicles, filterVehciles}

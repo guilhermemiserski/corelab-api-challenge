@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const vehicle = require('../models/vehicleModel');
-const {createVehicles, updateVehicles, deleteVehicles, getVehicles} = require('../controllers/index')
+const { createVehicles, updateVehicles, deleteVehicles, getVehicles, filterVehciles } = require('../controllers/index')
 
 const routes = Router();
 
@@ -16,6 +16,7 @@ routes.put('/veiculos/:id', updateVehicles);
 routes.delete('/veiculos/:id', deleteVehicles);
 
 
+routes.get('/filtrar/:brand/:year/:minPrice/:maxPrice', filterVehciles);
 
 module.exports = { routes };
 
