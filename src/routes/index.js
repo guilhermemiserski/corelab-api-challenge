@@ -1,5 +1,4 @@
 const { Router } = require('express');
-const vehicle = require('../models/vehicleModel');
 const { createVehicles, updateVehicles, deleteVehicles, getVehicles, filterVehciles } = require('../controllers/index')
 
 const routes = Router();
